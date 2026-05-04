@@ -1,18 +1,13 @@
-from flask import Flask, render_template, redirect, request,url_for
+from flask import Flask, render_template, redirect, request
 import sqlite3   #for the database stuff
-#this is to sanitaize the filename so we don;t get hacked!!
-from werkzeug.utils import secure_filename
-
 
 app = Flask(__name__)
 
 #the path and filename for the database
-DATABASE = "Image Uploads/database.db"
-# the upload folder- relative path from the folder I have open in VSCode
-UPLOAD_FOLDER = 'Image Uploads/static/images/'
+DATABASE = "database.db"
 
 #cool function to automatcally connect and query
-def query_db(sql,args=(),one=False):
+def query_db(sql, args=(), one=False):
     '''connect and query- will retun one item if one=true and can accept arguments as tuple'''
     db = sqlite3.connect(DATABASE)
     cursor = db.cursor()
@@ -34,15 +29,8 @@ def index():
 def add_item():
     #get the form data from the request object like this
     item = request.form['item_name']
-    #now get the filename from the form
-    file = request.files['file']
-    #should check the file is valid but for simplicity......
-    #save the file in the UPLOAD_FOLDER
-    filename = secure_filename(file.filename)
-    file.save(UPLOAD_FOLDER+filename)
-    #now insert into the database
-    sql = "INSERT INTO item (name, image_filename) VALUES (?,?);"   #create a query to insert ther data
-    query_db(sql,(item,filename))  #execute the query
+    sql = "INSERT INTO item (item) VALUES (?);"   #create a query to insert ther data
+    query_db(sql,(item,))  #execute the query
     return redirect('/') #redirect back to the home page (will display them all)
 
 

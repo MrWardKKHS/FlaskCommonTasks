@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "MyReallySecretKey"
 
 #the path and filename for the database
-DATABASE = "SimpleUserLogin/database.db"
+DATABASE = "11_SimpleUserLogin/database.db"
 
 #cool function to automatcally connect and query
 def query_db(sql,args=(),one=False):

@@ -4,7 +4,7 @@ import sqlite3   #for the database stuff
 app = Flask(__name__)
 
 #the path and filename for the database
-DATABASE = "SimpleImages/images.db"
+DATABASE = "07_SimpleImages/images.db"
 
 #cool function to automatcally connect and query
 def query_db(sql,args=(),one=False):

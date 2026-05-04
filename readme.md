@@ -24,3 +24,5 @@ A great way to store info across the session like the user who is logged in. Sto
 A simple image uplod program that extends the forms and the images apps to show you how to simply upload files from forms. THis also addds them to the database correctly (with just the filename!)
 11. SimpleUserLogin  
 A bit more in depth- several simple routes to log in, sign up, log out. Uses a database of users and HASHES the passwword before storing it. Quick and Dirty and OK for a start. Like before, storees the user in the session so we can, for example, only render admin pages to a certain user(s) or add items to the correct users shopping cart.
+
+Note: This repo will only run correctly when this folder is open in VSCode due to how VSCode handles filepaths. 

@@ -8,6 +8,16 @@
 </head>
 <body>
     <!-- double curlies are 'variables' sent to the template by render template -->
+    <p>Using {% raw %}{{results}}{% endraw %}</p>
     {{results}}
+    <br>
+    <p>Nicer formating with a for loop</p>
+    <ul>
+        {% for result in results %}
+            <li>{{result[1]}}</li>
+        {% endfor %}
+    </ul>
+
+
 </body>
 </html>

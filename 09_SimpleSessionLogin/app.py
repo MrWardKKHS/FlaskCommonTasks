@@ -39,8 +39,6 @@ def index_post():
 def admin():
     return render_template("admin.html")
 
-
-
 #this bit of code runs the app that we just made with debug on
 if __name__ == "__main__":
     app.run(debug=True)

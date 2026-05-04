@@ -1,0 +1,11 @@
+<!-- This also extends base so it includes all the base HTML -->
+{% extends 'base.html' %}
+
+<!-- You can use block for more than just content, like this title here -->
+{% block title %}
+    <title>My second page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>You are now on page 2</h1>
+{% endblock %}
