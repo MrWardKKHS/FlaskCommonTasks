@@ -5,7 +5,7 @@ import sqlite3
 app = Flask(__name__)
 
 #the path and filename for the database
-DATABASE = "DynamicRoutes/images.db"
+DATABASE = "06_DynamicRoutes/images.db"
 
 #cool function to automatcally connect and query
 def query_db(sql,args=(),one=False):
